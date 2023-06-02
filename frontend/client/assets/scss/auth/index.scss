@@ -1,0 +1,32 @@
+.custom-input {
+    padding-left: 33px;
+    padding-right: 70px;
+    font-size: 16px;
+    border-radius: 8px;
+    height: 50px;
+    border: 1px solid #5e5c5c;
+    font-size: unset;
+    color: #7e7d7d;
+    @include screen(576){
+        padding-left: 12px;
+    }
+    &:focus {
+        box-shadow: unset;
+        border: 1px solid #e79c3a;
+        outline: none;
+    }
+}
+
+.form-checkbox {
+    input {
+        border-color: #e79c3a !important;
+        &:checked {
+            background-color: #e79c3a !important;
+            border-color: #e79c3a !important;
+        }
+    }
+    label {
+        color: #e79c3a;
+        font-weight: 500;
+    }
+}

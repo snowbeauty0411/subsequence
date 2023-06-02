@@ -1,0 +1,178 @@
+#registerTemplate {
+    .form-control {
+      &:disabled,
+      &[readonly] {
+        background-color: #bebebe;
+        opacity: 1;
+      }
+    }
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h2 {
+      font-size: 24px;
+      margin-bottom: 30px;
+      color: map-get($colors, 'green');
+    }
+    .hr-a {
+      border-top: 1px solid #707070;
+      width: 74%;
+      margin-top: 78px;
+      @include screen(424) {
+        width: 94%;
+        margin-top: 60px;
+      }
+    }
+    .wrap-infomation {
+      width: 100%;
+      background-color: #ebe9e8;
+      padding: 40px;
+  
+      h2 {
+        text-align: center;
+        color: #493426;
+        font-size: 20px;
+  
+        @include screen(424) {
+          font-size: 16px;
+        }
+      }
+      .register-form__infomation {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        label {
+          font-size: 14px;
+          color: map-get($colors, 'brown');
+        }
+        input {
+          height: 50px;
+          border: none;
+          border-radius: 0;
+          @include screen(424) {
+            font-size: 18px;
+          }
+          &::placeholder {
+            font-size: 14px;
+            color: #bebebe;
+            padding-left: 5px;
+          }
+          &:focus {
+            box-shadow: 0 0 0 0.25rem #95c895;
+            border: none !important;
+          }
+        }
+        .error {
+          color: red;
+          position: relative;
+          left: 0;
+          font-size: 12px;
+          position: absolute;
+          bottom: -22px;
+        }
+        .wrap-contact {
+          width: 600px;
+          position: relative;
+          @include screen(767) {
+            width: 70%;
+          }
+          @include screen(424) {
+            width: 94%;
+          }
+        }
+        .hr-b {
+          border-top: 1px solid #707070;
+          width: 74%;
+          margin-top: 50px;
+          @include screen(424) {
+            width: 94%;
+          }
+        }
+        .hr-none {
+          @include screen(424) {
+            display: none;
+          }
+        }
+      }
+      .submit-register__info {
+        margin-top: 60px;
+        background-color: #5daf5d;
+        height: 48px;
+        width: calc(600px / 2 - 5px);
+        margin-left: 0 !important;
+  
+        @include screen(424) {
+          width: 94%;
+          border-radius: 4px;
+        }
+  
+        &:focus {
+          box-shadow: 0 0 0 0.25rem #95c895 !important;
+        }
+        .text-button {
+          color: #fff;
+          font-size: 1rem;
+        }
+      }
+      .cancel-register__info {
+        margin-top: 60px;
+        background-color: #575757;
+        height: 48px;
+        width: calc(600px / 2 - 5px);
+        margin-right: 0 !important;
+  
+        @include screen(424) {
+          width: 94%;
+          border-radius: 4px;
+        }
+  
+        &:focus {
+          box-shadow: 0 0 0 0.25rem #444444 !important;
+        }
+        .text-button {
+          color: #fff;
+          font-size: 1rem;
+        }
+      }
+      .error-name {
+        position: absolute;
+        top: -40px;
+        background-color: #e94545;
+        color: #fff;
+        font-size: 12px;
+        padding: 5px;
+        border-radius: 5px;
+        right: 0;
+        @include screen(424) {
+          right: 31%;
+          top: -8px;
+          font-size: 10px;
+        }
+        &::after {
+          content: '';
+          width: 0;
+          height: 0;
+          border-left: 11px solid transparent;
+          border-right: 9px solid transparent;
+          position: absolute;
+          right: 8px;
+          border-top: 11px solid #e94545;
+          top: 87%;
+        }
+      }
+    }
+    @keyframes spin {
+      to {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+    @-webkit-keyframes spin {
+      to {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+  }

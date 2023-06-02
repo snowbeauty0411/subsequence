@@ -1,0 +1,160 @@
+.c-comment-item {
+  width: 100%;
+  &__avatar {
+    &-left {
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+    &-right {
+      height: 50px;
+      margin-left: 30px;
+      &-bottom {
+        color: $gray-800;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      @include screen(01023) {
+        margin-left: 20px;
+        &-top {
+          img {
+            max-width: 15px;
+          }
+        }
+      }
+    }
+  }
+  &__date-time {
+    color: #7e7d7d;
+    font-size: 16px;
+    @include screen(01023) {
+      font-size: 12px;
+    }
+  }
+  &__bottom {
+    .text-comment {
+        color: #7e7d7d;
+        font-weight: 600;
+    }
+    .reply-comment {
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+    }
+    .text-reply {
+        color: $orange;
+        font-weight: 600;
+        cursor: pointer;
+        @include screen(767) {
+          font-size: 12px;
+        }
+    }
+    .list-image {
+        &-item {
+            width: 25%;
+            margin-right: 20px;
+        }
+    }
+
+    .closeS {
+        transform: rotate(180deg);
+    }
+}
+}
+.new-services {
+  &-btn {
+    @include screen(01199) {
+      color: #5e5c5c;
+      font-size: 11px;
+      img {
+        margin-left: 7px;
+        width: 12px;
+      }
+    }
+    @include screen(10241365) {
+      color: #5e5c5c;
+      font-size: 11px;
+      img {
+        margin-left: 7px;
+      }
+    }
+  }
+}
+.custom-pagination {
+  margin-top: 20px;
+  .carousel__pagination-button {
+    width: 18px;
+    height: 18px;
+    border-radius: 50px;
+    background: $body-bg;
+    opacity: 1;
+    box-shadow: 2px 2px 2px #4d4d4d33;
+    @include screen(1280) {
+      width: 12px!important;
+      height: 12px!important;
+      margin: 3px;
+    }
+  }
+  .carousel__pagination-button--active {
+    background: $orange;
+  }
+}
+.custom-navigation {
+  background: $orange !important;
+  @include screen(991) {
+    display: none;
+  }
+}
+.main-container {
+  width: calc(100vw - 400px);
+  min-height: 100vh;
+  @include screen(133601440) {
+    width: calc(100vw - 300px);
+  }
+  @include screen(01365) {
+    width: calc(100vw - 300px);
+  }
+  @include screen(1280) {
+    width: 100%;
+  }
+}
+
+.SDSwitch {
+  border: 0;
+  background-repeat: no-repeat;
+  background-color: $gray-800;
+  box-shadow: none !important;
+  outline: none !important;
+  cursor: pointer;
+  background-image: url("../images/switchWhite.svg") !important;
+  &:focus {
+    filter: brightness(1);
+  }
+  &:checked {
+    background: #fd8857;
+    background-repeat: no-repeat;
+    filter: none;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.pc-only {
+  @include screen(767) {
+    display: none!important;
+  }
+}
+.sp-only {
+  display: none;
+  @include screen(767) {
+    display: block!important;
+  }
+}

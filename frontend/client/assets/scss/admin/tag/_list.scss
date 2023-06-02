@@ -1,0 +1,207 @@
+.sdAdmin-paymentList {
+  padding: 20px;
+
+  .header-custom {
+    th {
+      cursor: pointer;
+    }
+
+    .sort-icon {
+      height: 3px;
+      color: #b3b3b3;
+
+      &.active {
+        color: #000;
+      }
+    }
+  }
+  &-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 15px;
+
+    &-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include screen (480) {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-group {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 -6px;
+
+      &.mb-custom-20 {
+        margin-bottom: 20px;
+        width: 50%;
+        @include screen (480) {
+          width: 78%;
+          align-items: center;
+        }
+        .fd-admin-listtag-card-filter {
+          width: calc((100% - 55px) / 5);
+          @include screen (480) {
+            width: auto;
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    &-filter {
+      margin: 0 6px;
+      margin-top: 10px;
+      width: calc((100% - 60px) / 5);
+      @include screen (480) {
+        width: 100%;
+        margin: 0 0 15px 0;
+      }
+      input {
+        width: 100%;
+        display: inline;
+        font-size: 0.875rem;
+      }
+
+      button {
+        border: 0;
+        width: 100%;
+        height: 38px;
+        background-color: #5daf5d;
+        border-radius: 0.25rem;
+        @include screen (480) {
+          width: auto;
+          padding: 0 25px;
+          margin-right: 5px;
+        }
+      }
+
+      button.reset-search {
+        background-color: #707070;
+      }
+
+      button.add-tag {
+        background-color: #e79c3a;
+      }
+    }
+
+    &-select {
+      .select-box {
+        width: 80px;
+        height: 37px;
+        margin-left: 4px;
+      }
+    }
+  }
+
+  .custom-group {
+    display: flex;
+    justify-content: space-between;
+
+    .fd-admin-listtag-card-select {
+      margin-top: 10px;
+    }
+    .sdAdmin-paymentList-card-filter{
+      @include screen (480) {
+        width: auto;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.message-no-item {
+  text-align: center;
+}
+
+.btn-table {
+  margin-right: 3px;
+}
+
+.bg-secondary {
+  background-color: #6c757d;
+}
+
+.bg-success {
+  background-color: #198754;
+}
+
+.bg-danger {
+  background-color: #ff0000;
+}
+
+.bg-info {
+  background-color: #0dcaf0;
+}
+
+#modal-tag {
+  .content-modal-detail {
+    .btn-cancel {
+      width: 130px;
+      color: #7d9fb1 !important;
+      background: white !important;
+      box-shadow: 1px 1px 6px #00000029;
+      border-radius: 8px;
+      border: unset !important;
+    }
+
+    .btn-submit {
+      width: 130px;
+      color: $white !important;
+      background: $orange !important;
+      box-shadow: 1px 1px 6px #00000029;
+      border-radius: 8px;
+      border: unset !important;
+    }
+  }
+}
+.sd-preloads {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: #fff;
+  // opacity: 0.5;
+  .dot-flashing {
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #fd8857;
+    color: #fd8857;
+    animation: dotFlashing 1s infinite linear alternate;
+    animation-delay: 0.5s;
+    &::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: 15px;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: #fd8857;
+      color: #fd8857;
+      animation: dotFlashing 1s infinite alternate;
+      animation-delay: 1s;
+    }
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      left: -15px;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: #fd8857;
+      color: #fd8857;
+      animation: dotFlashing 1s infinite alternate;
+      animation-delay: 0s;
+    }
+  }
+}
