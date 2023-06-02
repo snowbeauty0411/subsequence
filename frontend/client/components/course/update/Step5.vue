@@ -1,0 +1,354 @@
+<template>
+  <div class="editService-step8">
+    <b-container fluid
+      ><b-row
+        ><b-col cols="12" lg="6" class="g-0"
+          ><div class="editService-step8-left flex flex-col justify-between">
+            <div class="editService-step8-left-form">
+              <div class="d-flex">
+                <div class="step-title">
+                  このコースの利用には年齢確認が必要ですか？
+                </div>
+                <span class="ml-2 mt-4">※あとから編集不可</span>
+              </div>
+              <div class="step8-form">
+                <div class="step8-form-data relative">
+                  <b-form-radio-group
+                    v-model="selected"
+                    :options="options"
+                    stacked
+                    class="w-full form-raido-custom"
+                  ></b-form-radio-group>
+                  <div
+                    class="descriptionYellow absolute flex flex-col"
+                    style="left: 100px; top: 60%"
+                  >
+                    <div class="flex items-end textGray-custom w−100">
+                      <input
+                        maxlength="2"
+                        v-model.trim="age_confirm"
+                        class="lineDes text-yellow-500 text-center"
+                        style="
+                          border-bottom: 1px solid #e79c3a;
+                          width: 40px;
+                          outline: none;
+                          background: unset;
+                        "
+                        :disabled="selected == 0"
+                        v-bind="formatNumber()"
+                        @blur="formatAgeConfirm()"
+                        id="age_confirm"
+                      />
+                      <span style="width: 200px">歳以上が利用可能</span>
+                    </div>
+                    <div class="flex items-center py-1">
+                      <BootstrapIcon
+                        icon="info-circle-fill"
+                        size="sm"
+                        class="mx-1 exclamation-triangle-fill"
+                        variant="warning"
+                      /><span>数字を入力してください</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="editService-step8-left-btn">
+              <div
+                class="text-danger"
+                style="padding: 0 22px; margin-bottom: 20px"
+              >
+                <span
+                  >※あとから編集不可の項目はコースに契約者が存在する場合変更することができません。</span
+                ><br />
+                <span>お間違えのないよう確認してご入力ください。</span>
+              </div>
+              <div class="flex">
+                <b-button
+                  class="
+                    btn-return
+                    flex
+                    justify-center
+                    items-center
+                    btn-step-common
+                  "
+                  v-on:click="backStep()"
+                >
+                  戻る
+                </b-button>
+                <b-button
+                  class="
+                    btn-next
+                    flex
+                    items-center
+                    justify-center
+                    btn-step-common
+                  "
+                  v-on:click="nextStep()"
+                >
+                  次へ
+                </b-button>
+              </div>
+            </div>
+          </div></b-col
+        ><b-col cols="12" lg="6" class="g-0"
+          ><div
+            class="
+              editService-step8-right
+              flex flex-col
+              items-center
+              justify-between
+              h-full
+            "
+          ></div></b-col></b-row
+    ></b-container>
+  </div>
+</template>
+
+<script>
+import BootstrapIcon from "@dvuckovic/vue3-bootstrap-icons";
+import { useToast } from "vue-toastification";
+import { Message } from "@/utils/message";
+
+export default {
+  name: "Step8",
+
+  components: {
+    BootstrapIcon,
+  },
+
+  setup() {
+    const toast = useToast();
+    return {
+      toast,
+    };
+  },
+
+  data() {
+    return {
+      selected: "0",
+      age_confirm: null,
+      options: [
+        { text: "不要", value: "0" },
+        { text: "必要", value: "1" },
+      ],
+      queryData: null,
+      optionToast: {
+        position: "top-right",
+        duration: 1000,
+      },
+      message: Message.SELLER,
+      isNotFullWidth: true,
+      messageShippingInfo: Message.DELIVERY,
+      detailCourse: {},
+      listCourseNew: {}
+    };
+  },
+
+  watch: {
+    selected() {
+      if (this.selected == 0) {
+        this.age_confirm = "";
+        this.isNotFullWidth = true;
+      } else {
+        if (this.age_confirm != "" && this.age_confirm != null) {
+          if (this.age_confirm) {
+            const regex = /^[0-9]*[1-9][0-9]*$/;
+            const found = regex.test(this.age_confirm);
+            if (found) {
+              this.isNotFullWidth = true;
+            } else {
+              this.isNotFullWidth = false;
+            }
+          }
+        } else {
+          this.isNotFullWidth = false;
+        }
+      }
+    },
+
+    age_confirm() {
+      if (this.age_confirm != "" && this.age_confirm != null) {
+        if (this.age_confirm) {
+          const regex = /^[0-9]*[1-9][0-9]*$/;
+          const found = regex.test(this.age_confirm);
+          if (found) {
+            this.isNotFullWidth = true;
+            if (this.selected === "0") {
+              this.detailCourse.age_confirm = null;
+              if (this.detailCourse.isUpdate === true) {
+                localStorage.setItem(
+                  "detailCourse",
+                  JSON.stringify(this.detailCourse)
+                );
+              } else {
+                localStorage.setItem(
+                  "listCourseNew",
+                  JSON.stringify(this.detailCourse)
+                );
+              }
+            } else {
+              if (this.age_confirm === null || this.age_confirm === "") {
+                this.isNotFullWidth = false;
+              } else {
+                if (!this.isNotFullWidth) {
+                  if (Number(this.age_confirm) < 10) {
+                    this.isNotFullWidth = false;
+                  } else {
+                    this.isNotFullWidth = false;
+                  }
+                } else {
+                  this.detailCourse.age_confirm = this.age_confirm;
+                  if (this.detailCourse.isUpdate === true) {
+                    localStorage.setItem(
+                      "detailCourse",
+                      JSON.stringify(this.detailCourse)
+                    );
+                  } else {
+                    localStorage.setItem(
+                      "listCourseNew",
+                      JSON.stringify(this.detailCourse)
+                    );
+                  }
+                }
+              }
+            }
+          } else {
+            this.isNotFullWidth = false;
+          }
+        }
+        return this.isNotFullWidth;
+      } else {
+        this.isNotFullWidth = false;
+      }
+    },
+  },
+
+  created() {
+    this.queryData = Number(this.$route.query.step);
+    let isReloadPage = localStorage.getItem("reloadPage");
+    this.idService = localStorage.getItem("idService");
+    if (isReloadPage === "true") {
+      this.$router.push(`/seller/service/${this.idService}/edit`);
+    }
+
+    this.detailCourse = JSON.parse(localStorage.getItem("detailCourse"));
+    this.listCourseNew = JSON.parse(localStorage.getItem("listCourseNew"));
+    if (this.detailCourse === null) {
+      this.detailCourse = this.listCourseNew
+    }
+
+    let age_confirm = this.detailCourse.age_confirm;
+    if (age_confirm === null) {
+      this.selected = "0";
+    } else if (age_confirm === 0) {
+      this.selected = "0";
+    } else {
+      this.age_confirm = Number(age_confirm);
+      this.selected = "1";
+    }
+  },
+
+  mounted() {
+    window.addEventListener("beforeunload", this.reloadPage, { capture: true });
+  },
+
+  beforeUnmount() {
+    window.removeEventListener("beforeunload", this.reloadPage, {
+      capture: true,
+    });
+  },
+
+  methods: {
+    reloadPage(e) {
+      localStorage.setItem("reloadPage", true);
+      localStorage.setItem("idService", this.idService);
+      return (e.returnValue = "終了してよろしいですか？");
+    },
+
+    formatNumber() {
+      if (this.age_confirm !== 0) {
+        if (/^0/.test(this.age_confirm) || /^[０-９]/.test(this.age_confirm)) {
+          this.age_confirm = this.age_confirm
+            .replace(/^0/, "")
+            .replace(/^０/, "");
+        }
+      }
+    },
+
+    formatAgeConfirm() {
+      String.prototype.splice = function (idx, rem, str) {
+        return this.slice(0, idx) + str + this.slice(idx + Math.abs(rem));
+      };
+      var text = this.age_confirm;
+      if (text) {
+        text = text
+          .toString()
+          .replace(/[^0-9０-９]/g, "")
+          .replace(/(\..*)\./g, "$1");
+        text = text.replaceAll(",", "");
+      }
+      if (text.length <= 2) {
+        this.age_confirm = text;
+      }
+    },
+
+    nextStep() {
+      if (this.selected === "1" && /^[０-９]/.test(this.age_confirm)) {
+        this.toast.error(
+          this.messageShippingInfo.enter_halfwidth,
+          this.optionToast
+        );
+        return;
+      }
+      if (this.selected === "0") {
+        this.detailCourse.age_confirm = null;
+        if (this.detailCourse.isUpdate === true) {
+          localStorage.setItem(
+            "detailCourse",
+            JSON.stringify(this.detailCourse)
+          );
+        } else {
+          localStorage.setItem(
+            "listCourseNew",
+            JSON.stringify(this.detailCourse)
+          );
+        }
+        this.$router.push("/seller/service/service-course/update?step=6");
+      } else {
+        if (this.age_confirm === null || this.age_confirm === "") {
+          this.toast.error(this.message.age_required, this.optionToast);
+        } else {
+          if (!this.isNotFullWidth) {
+            if (Number(this.age_confirm) < 10) {
+              this.toast.error(this.message.age_value, this.optionToast);
+            } else {
+              this.toast.error(this.message.age_required, this.optionToast);
+            }
+          } else {
+            this.detailCourse.age_confirm = this.age_confirm;
+            if (this.detailCourse.isUpdate === true) {
+              localStorage.setItem(
+                "detailCourse",
+                JSON.stringify(this.detailCourse)
+              );
+            } else {
+              localStorage.setItem(
+                "listCourseNew",
+                JSON.stringify(this.detailCourse)
+              );
+            }
+            this.$router.push("/seller/service/service-course/update?step=6");
+          }
+        }
+      }
+    },
+
+    backStep() {
+      this.$router.push("/seller/service/service-course/update?step=4");
+    },
+  },
+};
+</script>
+
+<style></style>

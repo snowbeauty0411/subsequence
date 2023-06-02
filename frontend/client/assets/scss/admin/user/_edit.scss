@@ -1,0 +1,1231 @@
+#registerTemplate {
+  .form-control {
+    &:disabled,
+    &[readonly] {
+      background-color: #bebebe;
+      opacity: 1;
+    }
+  }
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .wrap-infomation {
+    background-color: #ebe9e8;
+    padding: 40px;
+  }
+  .wrap-text-submit__btn {
+    margin-top: 42px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h6 {
+      font-size: 14px;
+      color: map-get($grays, '900');
+      margin-top: 17px;
+    }
+    h6 {
+      @include screen(424) {
+        font-size: 14px;
+        width: 100%;
+        padding-left: 16px;
+      }
+    }
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: map-get($colors, 'green');
+  }
+  .register-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .submit-register {
+      margin-top: 14px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      margin-bottom: 0;
+      width: 55%;
+      align-items: center;
+      margin-left: 32%;
+      @include screen(424) {
+        margin-left: 0;
+        width: 100%;
+        padding-left: 1rem;
+      }
+    }
+    .username__lable {
+      width: 18%;
+      font-size: 14px;
+      font-weight: $font-weight-base;
+      color: map-get($colors, 'brown');
+      letter-spacing: $spacing-base;
+      @include screen(424) {
+        width: 45%;
+      }
+    }
+    .icon-fail {
+      color: #e94545;
+      position: absolute;
+      right: -26px;
+      top: 13px;
+      font-size: 20px;
+    }
+    .icon-check {
+      right: 0;
+      top: 15px;
+      right: 10px;
+      position: absolute;
+      color: #629a62;
+      font-size: 16px;
+    }
+
+    input {
+      border-radius: 0 !important;
+      border: none !important;
+      height: 50px;
+      font-size: 20px;
+      background-color: transparent;
+      border: none;
+      font-weight: $font-weight-base;
+      @include screen(424) {
+        font-size: 20px;
+      }
+      &::-webkit-input-placeholder {
+        font-size: 14px;
+        color: #bebebe;
+      }
+    }
+    .submit-register {
+      background-color: #5daf5d;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 11px 20px;
+      width: 600px;
+      @include screen(424) {
+        width: 94%;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.25rem #95c895 !important;
+      }
+      .text-button {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: $font-weight-base;
+      }
+    }
+    .form-control {
+      &:focus {
+        box-shadow: 0 0 0 0.25rem #95c895;
+        border: none !important;
+      }
+      &:disabled,
+      &[readonly] {
+        background-color: #bebebe;
+        opacity: 1;
+      }
+    }
+  }
+  .hr-a {
+    border-top: 1px solid #707070;
+    width: 74%;
+    margin-top: 78px;
+    @include screen(424) {
+      width: 94%;
+      margin-top: 60px;
+    }
+  }
+  .wrap-infomation {
+    width: 100%;
+
+    h2 {
+      text-align: center;
+      color: #493426;
+      font-size: 20px;
+
+      @include screen(424) {
+        font-size: 16px;
+      }
+    }
+    .register-form__infomation {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      label {
+        font-size: 14px;
+        color: map-get($colors, 'brown');
+      }
+      input {
+        height: 50px;
+        border: none;
+        border-radius: 0;
+        @include screen(424) {
+          font-size: 18px;
+        }
+        &::placeholder {
+          font-size: 14px;
+          color: #bebebe;
+          padding-left: 5px;
+        }
+        &:focus {
+          box-shadow: 0 0 0 0.25rem #95c895;
+          border: none !important;
+        }
+      }
+      .form-group__radio {
+        display: flex;
+        justify-content: space-between;
+        width: 300px;
+        height: 50px;
+        margin-bottom: 10px;
+        @include screen(424) {
+          width: 60%;
+        }
+        .btn-radio {
+          width: 5rem;
+        }
+      }
+      .wrap-fullname {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        width: 600px;
+        position: relative;
+        div {
+          width: 49%;
+        }
+        @include screen(767) {
+          width: 70%;
+        }
+        @include screen(424) {
+          width: 94%;
+        }
+        .lastname {
+          margin-right: 10px;
+        }
+      }
+      .wrap-fullname_Furikana {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        position: relative;
+        margin-top: 0px;
+        z-index: 3;
+        width: 600px;
+        div {
+          width: 49%;
+        }
+        @include screen(767) {
+          width: 70%;
+        }
+        @include screen(424) {
+          width: 94%;
+        }
+        .lastname {
+          margin-right: 10px;
+        }
+      }
+      .form-group__radio-sex {
+        width: 600px;
+        @include screen(767) {
+          width: 70%;
+        }
+        @include screen(424) {
+          width: 92%;
+        }
+        div {
+          width: 90%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .btn-radio {
+            width: 6rem;
+            display: block;
+          }
+          @include screen(424) {
+            width: 82%;
+          }
+        }
+
+        h6 {
+          font-size: 14px;
+          color: #493426;
+          width: 10%;
+          margin-top: 7px;
+          @include screen(424) {
+          }
+        }
+      }
+      .wrap-name__company {
+        width: 600px;
+        position: relative;
+        @include screen(767) {
+          width: 70%;
+        }
+        @include screen(424) {
+          width: 94%;
+        }
+      }
+      .error {
+        color: red;
+        position: relative;
+        left: 0;
+        font-size: 12px;
+        position: absolute;
+        bottom: -22px;
+      }
+      .wrap-zipcode-district {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        margin-top: 10px;
+        width: 600px;
+        position: relative;
+        @include screen(767) {
+          width: 70%;
+        }
+        .wrap__zipcode {
+          display: flex;
+          flex-direction: row;
+          width: 49%;
+          @include screen(424) {
+            width: 100%;
+          }
+          .hyphen {
+            display: flex;
+            align-items: center;
+          }
+        }
+        @include screen(424) {
+          width: 94%;
+          flex-direction: column;
+        }
+        .error-zipcode {
+          position: absolute;
+          background-color: #e94545;
+          color: #fff;
+          padding: 5px;
+          border-radius: 5px;
+          font-size: 12px;
+          right: 40%;
+          top: -41px;
+          @include screen(424) {
+            font-size: 10px;
+            top: -38px;
+          }
+          &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 11px solid transparent;
+            border-right: 9px solid transparent;
+            position: absolute;
+            right: 49%;
+            border-top: 11px solid #e94545;
+            top: 87%;
+          }
+        }
+        .zipcode__one {
+          width: 93px;
+          margin-right: 10px;
+          &::placeholder {
+            transform: translateX(20%);
+          }
+        }
+        .zipcode__two {
+          width: 137px;
+          margin-left: 10px;
+          &::placeholder {
+            transform: translateX(30%);
+          }
+        }
+        .icon-zipcode {
+          width: 40%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      .wrap-city {
+        margin-top: 0px;
+        width: 600px;
+        position: relative;
+        z-index: 3;
+        @include screen(767) {
+          width: 70%;
+        }
+        @include screen(424) {
+          width: 94%;
+        }
+        .error-city {
+          position: absolute;
+          right: 0;
+          font-size: 12px;
+          background-color: #e94545;
+          color: #fff;
+          top: -29px;
+          padding: 5px;
+          width: 10rem;
+          left: 0;
+          border-radius: 5px;
+          text-align: center;
+          @include screen(424) {
+            font-size: 10px;
+            top: -12px;
+          }
+          &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            position: absolute;
+            right: 44%;
+            border-top: 8px solid #e94545;
+            top: 100%;
+          }
+        }
+      }
+      .wrap-birtyear {
+        width: 600px;
+        position: relative;
+        @include screen(767) {
+          width: 70%;
+        }
+        @include screen(424) {
+          width: 94%;
+        }
+        .error-yera {
+          position: absolute;
+          background-color: #e94545;
+          color: #fff;
+          right: 0;
+          font-size: 12px;
+          border-radius: 5px;
+          padding: 5px;
+          top: -10px;
+          right: -5px;
+          @include screen(424) {
+            font-size: 10px;
+            right: 0;
+          }
+          &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 11px solid transparent;
+            border-right: 9px solid transparent;
+            position: absolute;
+            right: 37%;
+            border-top: 11px solid #e94545;
+            top: 87%;
+          }
+        }
+      }
+      .phoneNumberFixed {
+        margin-top: 0px;
+        width: 600px;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        z-index: 3;
+        .input {
+          width: calc((100% - 8px) / 3);
+        }
+        @include screen(767) {
+          width: 70%;
+        }
+        input {
+          &::placeholder {
+            transform: translateX(38%);
+          }
+          @include screen(480) {
+            &::placeholder {
+              transform: translateX(25%);
+            }
+          }
+        }
+        @include screen(424) {
+          width: 94%;
+        }
+        .telmobile-error {
+          position: absolute;
+          right: 0;
+          font-size: 12px;
+          background-color: #e94545;
+          color: #fff;
+          top: -43px;
+          padding: 5px;
+          width: 10rem;
+          right: 50%;
+          border-radius: 5px;
+          text-align: center;
+          @include screen(424) {
+            font-size: 10px;
+            top: -36px;
+            left: 138px;
+          }
+          &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            position: absolute;
+            right: 44%;
+            border-top: 8px solid #e94545;
+            top: 100%;
+          }
+        }
+
+        .telFixedTwo {
+          margin: 0 8px;
+        }
+      }
+      .telMobile {
+        margin-top: 0px;
+        width: 600px;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        z-index: 3;
+        input {
+          width: calc((100% - 8px) / 3);
+          &::placeholder {
+            transform: translateX(38%);
+          }
+          @include screen(480) {
+            &::placeholder {
+              transform: translateX(25%);
+            }
+          }
+        }
+        @include screen(767) {
+          width: 70%;
+        }
+
+        @include screen(424) {
+          width: 94%;
+        }
+        .telmobile-invalid {
+          position: absolute;
+          font-size: 12px;
+          background-color: #e94545;
+          color: #fff;
+          top: -44px;
+          padding: 5px;
+          right: 50%;
+          width: 10rem;
+          border-radius: 5px;
+          text-align: center;
+          @include screen(424) {
+            font-size: 10px;
+            left: 125px;
+          }
+          &::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            position: absolute;
+            right: 44%;
+            border-top: 8px solid #e94545;
+            top: 100%;
+          }
+        }
+        .telMobileTwo {
+          margin: 0 8px;
+        }
+      }
+
+      .wrap-interests {
+        $width: 300px;
+        $width-767: 200px;
+        $width-480: 170px;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        .interest {
+          position: relative;
+          span {
+            position: absolute;
+            top: 50%;
+            color: #fff;
+            z-index: 1;
+            left: 50%;
+            font-weight: 500;
+            font-size: 20px;
+            transform: translate(-50%, -50%);
+            width: fit-content;
+            max-width: 100%;
+            padding: 10px;
+          }
+        }
+        .styled-checkbox {
+          position: absolute; // take it out of document flow
+          opacity: 0; // hide it
+          & + label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            color: #333;
+            background-position: center;
+            object-fit: cover;
+            width: $width;
+            height: 100px;
+            border-radius: 20px;
+            background-repeat: no-repeat;
+            @include screen(767) {
+              width: $width-767;
+            }
+            @include screen(480) {
+              width: $width-480;
+            }
+          }
+          // Box.
+          & + label:before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: $width;
+            height: 100px;
+            background-position: center;
+            background-repeat: no-repeat;
+            @include screen(767) {
+              width: $width-767;
+            }
+            @include screen(480) {
+              width: $width-480;
+            }
+          }
+          &:checked + label {
+            color: #5daf5d;
+          }
+          // Box checked
+          &:checked + label:before {
+            border: 5px solid #f2d64c;
+            border-radius: 15px;
+          }
+          // Disabled state label.
+          &:disabled + label {
+            color: #b8b8b8;
+            cursor: auto;
+          }
+
+          // Disabled box.
+          &:disabled + label:before {
+            box-shadow: none;
+            background: #ddd;
+          }
+        }
+      }
+      .hr-b {
+        border-top: 1px solid #707070;
+        width: 74%;
+        margin-top: 50px;
+        @include screen(424) {
+          width: 94%;
+        }
+      }
+      .hr-none {
+        @include screen(424) {
+          display: none;
+        }
+      }
+      .interest-title {
+        margin-top: 30px;
+        text-align: center;
+        color: #493426;
+        margin-bottom: 8px;
+      }
+      .wrap-interests {
+        $width: 300px;
+        $width-767: 200px;
+        $width-480: 170px;
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5px;
+        .interest {
+          position: relative;
+          span {
+            position: absolute;
+            top: 50%;
+            color: #fff;
+            z-index: 1;
+            left: 50%;
+            font-weight: 500;
+            font-size: 20px;
+            transform: translate(-50%, -50%);
+            width: fit-content;
+            max-width: 100%;
+            padding: 10px;
+          }
+        }
+        .styled-checkbox {
+          position: absolute; // take it out of document flow
+          opacity: 0; // hide it
+          & + label {
+            position: relative;
+            cursor: pointer;
+            padding: 0;
+            color: #333;
+            background-position: center;
+            object-fit: cover;
+            width: $width;
+            height: 100px;
+            border-radius: 20px;
+            background-repeat: no-repeat;
+            @include screen(767) {
+              width: $width-767;
+            }
+            @include screen(480) {
+              width: $width-480;
+            }
+          }
+          // Box.
+          & + label:before {
+            content: '';
+            display: inline-block;
+            vertical-align: middle;
+            width: $width;
+            height: 100px;
+            background-position: center;
+            background-repeat: no-repeat;
+            @include screen(767) {
+              width: $width-767;
+            }
+            @include screen(480) {
+              width: $width-480;
+            }
+          }
+          &:checked + label {
+            color: #5daf5d;
+          }
+          // Box checked
+          &:checked + label:before {
+            border: 5px solid #f2d64c;
+            border-radius: 15px;
+          }
+          // Disabled state label.
+          &:disabled + label {
+            color: #b8b8b8;
+            cursor: auto;
+          }
+
+          // Disabled box.
+          &:disabled + label:before {
+            box-shadow: none;
+            background: #ddd;
+          }
+        }
+      }
+
+      .wrap-credit__card {
+        width: 600px;
+        display: flex;
+        flex-direction: column;
+        margin-top: 62px;
+        @include screen(767) {
+          width: 70%;
+        }
+        @include screen(424) {
+          width: 94%;
+        }
+        h2 {
+          text-align: center;
+          color: #493426;
+          margin-bottom: 28px;
+          font-size: 20px;
+          @include screen(424) {
+            font-size: 20px;
+          }
+        }
+        .lable-number__card {
+          font-size: 14px;
+          color: map-get($colors, 'brown');
+          margin-bottom: 8px;
+        }
+        input {
+          &::placeholder {
+            transform: translateX(25%);
+          }
+        }
+        .credit-card__info {
+          display: flex;
+          width: 100%;
+          justify-content: space-between;
+          position: relative;
+          .numberCreditCardTwo {
+            margin: 0 10px;
+          }
+          .numberCreditCardThree {
+            margin-right: 10px;
+          }
+          .visa-svg {
+            margin-left: 20px;
+            display: flex;
+            align-items: center;
+            @include screen(424) {
+              position: absolute;
+              right: 18px;
+              top: 112px;
+            }
+          }
+          input {
+            @include screen(424) {
+              &::placeholder {
+                transform: translateX(6%);
+              }
+            }
+          }
+        }
+      }
+      .wrap-time__card {
+        display: flex;
+        justify-content: space-between;
+        width: 600px;
+        @include screen(767) {
+          width: 70%;
+        }
+        @include screen(424) {
+          width: 70%;
+          position: relative;
+          left: -45px;
+        }
+
+        .timeCardMmyy {
+          margin-right: 10px;
+          &::placeholder {
+            transform: translateX(35%);
+            word-spacing: 12px;
+          }
+          @include screen(424) {
+            &::placeholder {
+              font-size: 12px;
+              transform: translateX(6%);
+            }
+          }
+        }
+      }
+    }
+    .wrap-save-check {
+      width: 600px;
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+      @include screen(424) {
+        display: none;
+      }
+      .custom-checkboxsavecard {
+        color: #493426;
+        font-weight: bold;
+      }
+    }
+    .submit-register__info {
+      margin-top: 60px;
+      background-color: #5daf5d;
+      height: 48px;
+      width: calc(600px / 2 - 5px);
+      margin-left: 5px;
+
+      @include screen(424) {
+        width: 94%;
+        border-radius: 4px;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.25rem #95c895 !important;
+      }
+      .text-button {
+        color: #fff;
+        font-size: 1rem;
+      }
+    }
+    .cancel-register__info {
+      margin-top: 60px;
+      background-color: #575757;
+      height: 48px;
+      width: calc(600px / 2 - 5px);
+      margin-right: 5px;
+
+      @include screen(424) {
+        width: 94%;
+        border-radius: 4px;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.25rem #444444 !important;
+      }
+      .text-button {
+        color: #fff;
+        font-size: 1rem;
+      }
+    }
+    .nameCard {
+      width: 600px;
+      @include screen(767) {
+        width: 70%;
+      }
+      @include screen(424) {
+        width: 94%;
+      }
+      .nameCard {
+        width: 100%;
+      }
+    }
+    .error-name {
+      position: absolute;
+      top: -40px;
+      background-color: #e94545;
+      color: #fff;
+      font-size: 12px;
+      padding: 5px;
+      border-radius: 5px;
+      right: 0;
+      @include screen(424) {
+        right: 31%;
+        top: -8px;
+        font-size: 10px;
+      }
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 11px solid transparent;
+        border-right: 9px solid transparent;
+        position: absolute;
+        right: 8px;
+        border-top: 11px solid #e94545;
+        top: 87%;
+      }
+    }
+    .error-first__name {
+      position: absolute;
+      top: -8px;
+      background-color: #e94545;
+      color: #fff;
+      font-size: 12px;
+      padding: 5px;
+      border-radius: 5px;
+      right: -33px;
+      @include screen(424) {
+        width: 45%;
+        top: -21px;
+        right: 0;
+        font-size: 10px;
+      }
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 11px solid transparent;
+        border-right: 9px solid transparent;
+        position: absolute;
+        right: 37%;
+        border-top: 11px solid #e94545;
+        top: 87%;
+      }
+    }
+    .error-numbercompanycode {
+      position: absolute;
+      background-color: #fff;
+      right: 0;
+      background-color: #e94545;
+      color: #fff;
+      font-size: 12px;
+      border-radius: 5px;
+      padding: 5px;
+      top: -6px;
+      right: 0;
+      @include screen(424) {
+        font-size: 10px;
+        top: -12px;
+        right: 24px;
+        width: 62%;
+      }
+
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 11px solid transparent;
+        border-right: 9px solid transparent;
+        position: absolute;
+        right: 37%;
+        border-top: 11px solid #e94545;
+        top: 87%;
+      }
+    }
+    .error-homebuilder {
+      position: absolute;
+      background-color: #fff;
+      right: 0;
+      background-color: #e94545;
+      color: #fff;
+      font-size: 12px;
+      border-radius: 5px;
+      padding: 5px;
+      top: -10px;
+      right: 0;
+      @include screen(424) {
+        top: -8px;
+        right: 9px;
+        font-size: 10px;
+      }
+      &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 11px solid transparent;
+        border-right: 9px solid transparent;
+        position: absolute;
+        right: 37%;
+        border-top: 11px solid #e94545;
+        top: 87%;
+      }
+    }
+  }
+
+  .wrap-button-info__top {
+    width: 100%;
+    position: relative;
+    @include screen(424) {
+      display: none;
+    }
+    button {
+      position: absolute;
+      right: 72px;
+      top: -93px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background-color: #3d873d;
+      display: flex;
+      flex-direction: column;
+      color: #fff;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      @include screen(767) {
+        right: 13px;
+      }
+    }
+  }
+  .invalid-Name {
+    position: absolute;
+    right: 0;
+  }
+  .idDistrick {
+    width: 50%;
+    height: 50px;
+    position: relative;
+    @include screen(424) {
+      margin-top: 29px;
+      margin-bottom: 11px;
+      width: 100%;
+    }
+    .lable-districk {
+      position: absolute;
+      top: -30px;
+      font-size: 14px;
+      color: map-get($colors, 'brown');
+    }
+
+    select {
+      height: 50px;
+      border-radius: unset;
+      border: unset;
+      color: #5daf5d;
+      font-weight: 600;
+      &:disabled,
+      &[readonly] {
+        background-color: #bebebe;
+        opacity: 1;
+      }
+    }
+    ul {
+      width: 100%;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      font-size: 16px;
+      position: absolute;
+      z-index: 1;
+      top: 103%;
+      background-color: #fff;
+      left: 0;
+      border: 1px solid #bebebe;
+      height: 22vh;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+        cursor: default;
+      }
+      /* Track */
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        cursor: default;
+      }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 6px;
+        border-radius: 6px;
+        background-color: #3d873d;
+        -webkit-box-shadow: #bebebe;
+        cursor: default;
+      }
+    }
+    li {
+      padding: 12px;
+      color: #493426;
+      text-align: center;
+      font-size: 12px;
+      &:hover {
+        color: white;
+        background: #5daf5d;
+      }
+    }
+    .current {
+      background-color: #ebe9e8;
+    }
+    .hidden {
+      visibility: hidden;
+    }
+    .visible {
+      visibility: visible;
+    }
+    .front-fillter__icon {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      color: #423931;
+    }
+  }
+  .wrap-name__site-zipcode {
+    width: 600px;
+    display: flex;
+    height: 39px;
+    align-items: flex-end;
+    @include screen(424) {
+      width: 94%;
+    }
+    span {
+      width: 50%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      font-size: 14px;
+      color: map-get($colors, 'brown');
+      .title-link {
+        font-size: 12px;
+        color: #5daf5d;
+        letter-spacing: .9px;
+        text-decoration: underline;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .loading {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+    margin-right: 1rem;
+  }
+
+  @keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin {
+    to {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+}
+.lable__telfixed {
+  color: map-get($colors, 'brown');
+  font-size: 14px;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 20px;
+  margin-bottom: 10px;
+  margin-top: 7px;
+  @include screen(767) {
+    width: 70%;
+  }
+  @include screen(424) {
+    width: 94%;
+  }
+}
+.wrap-companycode {
+  width: 600px;
+  @include screen(767) {
+    width: 70%;
+  }
+  @include screen(424) {
+    width: 94%;
+  }
+}
+.lable-MM-YY {
+  font-size: 14px;
+  color: map-get($colors, 'brown');
+  width: 600px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  @include screen(767) {
+    width: 70%;
+  }
+  @include screen(424) {
+    width: 94%;
+  }
+
+  span {
+    width: 50%;
+    word-spacing: 12px;
+    justify-content: flex-start;
+    align-items: center;
+    @include screen(424) {
+      width: 38%;
+    }
+  }
+  span:nth-child(2) {
+    padding-left: 4px;
+  }
+}
+.wrap-companycode {
+  position: relative;
+}
+.form-control.password {
+  @include screen(424) {
+    font-size: 40px !important;
+  }
+}
